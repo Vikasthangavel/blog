@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="navbar__inner">
         <a href="/" className="navbar__brand">
           <span className="navbar__dot" />
-          dev.blog
+          vikas.dev
         </a>
         <ul className="navbar__links">
           <li><a href="#posts">Posts</a></li>
