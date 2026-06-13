@@ -8,6 +8,9 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  display: block; /* Ensure Link behaves like a block element */
+  text-decoration: none; /* Remove Link underline */
+  color: inherit;
 }
 
 .post-card::before {

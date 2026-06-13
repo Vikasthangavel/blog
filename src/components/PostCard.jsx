@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
 import "./PostCard.css";
 
 const PostCard = ({ post, variant = "post" }) => {
+  const CardContainer = post.slug ? Link : "article";
+  const containerProps = post.slug 
+    ? { to: `/post/${post.slug}`, className: `post-card post-card--${variant}` }
+    : { className: `post-card post-card--${variant}` };
+
   return (
-    <article className={`post-card post-card--${variant}`}>
+    <CardContainer {...containerProps}>
       <div className="post-card__header">
         <div className="post-card__content">
           <h3 className="post-card__title">{post.title}</h3>
@@ -37,7 +43,7 @@ const PostCard = ({ post, variant = "post" }) => {
           </div>
         )}
         {(post.liveUrl || post.repoUrl) && (
-          <div className="post-card__project-links">
+          <div className="post-card__project-links" onClick={(e) => e.stopPropagation()}>
             {post.liveUrl && (
               <a href={post.liveUrl} className="post-card__project-link" target="_blank" rel="noreferrer">
                 Live ↗
@@ -51,7 +57,7 @@ const PostCard = ({ post, variant = "post" }) => {
           </div>
         )}
       </div>
-    </article>
+    </CardContainer>
   );
 };
 

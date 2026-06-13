@@ -1,0 +1,110 @@
+.post-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--space-16) + 40px) var(--space-6) var(--space-16);
+  background: var(--bg-surface);
+  min-height: 100vh;
+}
+
+.post-page__not-found {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--space-16) + 40px) var(--space-6) var(--space-16);
+  text-align: center;
+}
+
+.post-page__back {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+  transition: color var(--transition);
+}
+
+.post-page__back:hover {
+  color: var(--accent-violet);
+  text-decoration: underline;
+}
+
+.post-page__header {
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.post-page__title {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+.post-page__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.post-page__tag {
+  background: rgba(59, 40, 204, 0.08);
+  color: var(--accent-blue);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--text-xs);
+}
+
+.post-page__content {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.post-page__content h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.post-page__content h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+
+.post-page__content p {
+  margin-bottom: var(--space-5);
+}
+
+.post-page__content ul {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-6);
+}
+
+.post-page__content li {
+  margin-bottom: var(--space-2);
+}
+
+.post-page__content hr {
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+  margin: var(--space-10) 0;
+}
+
+.post-page__summary {
+  background: var(--bg-base);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent-blue);
+  font-size: var(--text-base);
+}

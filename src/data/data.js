@@ -37,6 +37,7 @@ export const posts = [
     date: "May 30",
     category: "Backend",
     tag: "Project Story",
+    slug: "time2order",
     liveUrl: "https://time2orders.com",
   },
   {
