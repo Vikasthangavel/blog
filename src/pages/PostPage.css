@@ -1,15 +1,13 @@
 .post-page {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: calc(var(--space-16) + 40px) var(--space-6) var(--space-16);
+  max-width: 100%;
+  padding: calc(var(--space-16) + 40px) 5% var(--space-16);
   background: var(--bg-surface);
   min-height: 100vh;
 }
 
 .post-page__not-found {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: calc(var(--space-16) + 40px) var(--space-6) var(--space-16);
+  max-width: 100%;
+  padding: calc(var(--space-16) + 40px) 5% var(--space-16);
   text-align: center;
 }
 

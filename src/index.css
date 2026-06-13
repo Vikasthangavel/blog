@@ -70,7 +70,7 @@
   --transition: 0.2s ease;
 
   /* Layout */
-  --max-width: 800px; /* Slightly wider */
+  --max-width: 100%; /* Full page width */
 }
 
 html {
