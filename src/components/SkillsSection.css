@@ -24,17 +24,19 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
-  background: var(--bg-card);
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
   cursor: default;
+  box-shadow: var(--shadow-sm);
 }
 
 .skills__item:hover {
   background: var(--bg-card-hover);
   border-color: var(--border);
   transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .skills__icon {
@@ -45,9 +47,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-elevated);
+  background: rgba(59, 40, 204, 0.05); /* Light blue accent bg */
+  color: var(--accent-blue);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(59, 40, 204, 0.1);
 }
 
 .skills__label {

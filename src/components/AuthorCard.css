@@ -13,7 +13,7 @@
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #4f8ef7 0%, #a78bfa 100%);
+  background: var(--accent-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
   font-weight: 700;
   color: #fff;
   letter-spacing: -0.02em;
-  box-shadow: 0 4px 12px rgba(79, 142, 247, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .author-card__info {
