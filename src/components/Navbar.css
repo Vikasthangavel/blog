@@ -37,6 +37,26 @@
 
 .navbar__brand:hover { color: var(--indigo); }
 
+.navbar__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--indigo);
+  padding: 7px 16px;
+  border: 1px solid rgba(99,102,241,.25);
+  border-radius: var(--radius-full);
+  background: rgba(99,102,241,.08);
+  transition: all var(--transition);
+}
+
+.navbar__back:hover {
+  background: rgba(99,102,241,.16);
+  border-color: rgba(99,102,241,.45);
+  transform: translateX(-2px);
+}
+
 .navbar__dot {
   width: 8px;
   height: 8px;

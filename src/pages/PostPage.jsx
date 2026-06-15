@@ -1,11 +1,10 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./PostPage.css";
 
 /* ─── Time2Order Content ─────────────────────────────────────────────────── */
 const Time2OrderPost = () => (
   <article className="post-page">
     <div className="post-page__header">
-      <Link to="/" className="post-page__back">← Back to home</Link>
       <h1 className="post-page__title">How I Built a Preorder System for Local Shops Using Python &amp; Cashfree API</h1>
       <div className="post-page__meta">
         <span className="post-page__tag">Project Story</span>
@@ -134,7 +133,6 @@ const Time2OrderPost = () => (
 const DakshaaPost = () => (
   <article className="post-page">
     <div className="post-page__header">
-      <Link to="/" className="post-page__back">← Back to home</Link>
       <h1 className="post-page__title">
         Deploying a Full-Stack App on Cloudflare + VPS — Lessons from DAKSHAA T26
       </h1>
@@ -297,7 +295,7 @@ const PostPage = () => {
   return (
     <div className="post-page__not-found">
       <h2>Post not found</h2>
-      <Link to="/" className="post-page__back">← Back to home</Link>
+      <a href="/" className="post-page__back">← Back to home</a>
     </div>
   );
 };
