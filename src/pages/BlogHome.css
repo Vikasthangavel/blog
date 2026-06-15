@@ -1,4 +1,4 @@
 .blog-home {
-  padding-top: 64px; /* Navbar height */
   min-height: 100vh;
+  padding: 0 var(--space-6);
 }
