@@ -16,14 +16,14 @@ export const author = {
 // ─── Featured Post ────────────────────────────────────────────────────────────
 export const featuredPost = {
   id: "featured-1",
-  title: "Building TrueSight AI — A Deepfake Detection System Presented to Namakkal Cyber Cell",
+  title: "How I Built a Preorder System for Local Shops Using Python & Cashfree API",
   excerpt:
-    "How I integrated Roboflow-trained CV models with a Flask backend for multimodal video + audio deepfake analysis, built automated forensic report generation, and designed an investigation-centric workflow aligned with real cybercrime operations.",
-  date: "Jun 5, 2025",
-  readTime: "12 min read",
-  category: "AI / ML",
-  slug: "truesight-ai-deepfake-detection",
-  liveUrl: "https://tinyurl.com/cybernamakkal",
+    "A practical walkthrough of Time2Order — reducing shop wait times, managing crowd flow during peak hours, and integrating the Cashfree payment gateway with Python and SQL.",
+  date: "May 30, 2025",
+  readTime: "8 min read",
+  category: "Backend",
+  slug: "time2order",
+  liveUrl: "https://time2orders.com",
 };
 
 // ─── Posts ────────────────────────────────────────────────────────────────────
