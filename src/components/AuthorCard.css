@@ -1,205 +1,191 @@
 /* ── AuthorCard — Hero Section ── */
 .author-card {
   width: 100%;
-  padding: var(--space-16) var(--space-10) var(--space-12);
-  animation: fadeUp 0.6s ease both;
+  padding: var(--space-12) var(--space-10) var(--space-10);
+  animation: fadeUp 0.5s ease both;
 }
 
-.author-card__top {
+/* ── Top badges row ── */
+.author-card__badges {
   display: flex;
-  align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-3);
+  flex-wrap: wrap;
   margin-bottom: var(--space-8);
 }
 
-/* Avatar */
-.author-card__avatar {
-  flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: var(--radius-xl);
-  background: var(--grad-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-2xl);
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.04em;
-  box-shadow: var(--shadow-glow), var(--shadow-md);
-  animation: float 4s ease-in-out infinite;
-  position: relative;
-}
-
-.author-card__avatar::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: calc(var(--radius-xl) + 2px);
-  background: var(--grad-hero);
-  z-index: -1;
-  opacity: 0.5;
-  filter: blur(8px);
-}
-
-.author-card__info { flex: 1; }
-
-.author-card__greeting {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--indigo);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-2);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.author-card__greeting::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 2px;
-  background: var(--grad-primary);
-  border-radius: 2px;
-}
-
-.author-card__name {
-  font-size: var(--text-4xl);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--space-3);
-}
-
-.author-card__title-badge {
+.author-card__badge {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-secondary);
-  background: var(--bg-glass);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  padding: 6px 14px;
-}
-
-.author-card__title-badge span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--teal);
-  display: inline-block;
-  animation: pulse-glow 2s ease-in-out infinite;
-  box-shadow: 0 0 8px var(--teal);
-}
-
-/* Bio / Subtitle */
-.author-card__subtitle {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: var(--space-8);
-}
-
-/* Stats row */
-.author-card__stats {
-  display: flex;
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
-  padding: var(--space-5) var(--space-6);
-  background: var(--bg-glass);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(12px);
-}
-
-.author-card__stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.author-card__stat-value {
-  font-size: var(--text-xl);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  background: var(--grad-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.author-card__stat-label {
-  font-size: var(--text-xs);
-  color: var(--text-muted);
   font-weight: 500;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid;
+}
+
+.author-card__badge--green {
+  color: var(--green-dark);
+  border-color: var(--border-green);
+  background: var(--bg-green-light);
+}
+
+.author-card__badge--green .badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+.author-card__badge--neutral {
+  color: var(--text-secondary);
+  border-color: var(--border);
+  background: var(--bg-surface);
+}
+
+/* ── Greeting ── */
+.author-card__greeting {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
 }
 
-.author-card__stat-divider {
-  width: 1px;
-  background: var(--border);
-  margin: 4px 0;
+/* ── Name ── */
+.author-card__name {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
 }
 
-/* Links */
-.author-card__links {
+/* ── Role pill ── */
+.author-card__role {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.author-card__role-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.author-card__cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--text-muted);
+  border-radius: 1px;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/* ── Bio ── */
+.author-card__bio {
+  font-size: var(--text-xl);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 680px;
+}
+
+.author-card__bio .highlight-orange { color: var(--orange); font-weight: 600; }
+.author-card__bio .highlight-green  { color: var(--green-dark); font-weight: 600; }
+
+/* ── Status box ── */
+.author-card__status {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  background: var(--orange-bg);
+  border: 1.5px solid var(--border-orange);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+  max-width: 680px;
+}
+
+.author-card__status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.author-card__status-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 2px;
+}
+
+.author-card__status-sub {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* ── CTA Buttons ── */
+.author-card__ctas {
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
 }
 
-.author-card__link {
+.author-card__cta {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   font-size: var(--text-sm);
   font-weight: 600;
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  border-radius: var(--radius-lg);
   transition: all var(--transition);
-  position: relative;
-  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.author-card__link--primary {
-  background: var(--grad-primary);
+.author-card__cta--primary {
+  background: var(--grad-orange);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(99,102,241,.4);
+  border: 1.5px solid transparent;
+  box-shadow: 0 4px 14px rgba(193,98,31,.3);
 }
 
-.author-card__link--primary:hover {
+.author-card__cta--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(99,102,241,.5);
+  box-shadow: 0 6px 20px rgba(193,98,31,.4);
 }
 
-.author-card__link--secondary {
-  background: var(--bg-glass);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
-
-.author-card__link--secondary:hover {
+.author-card__cta--secondary {
+  background: var(--bg-surface);
   color: var(--text-primary);
-  border-color: var(--border-hover);
-  background: var(--bg-glass-hover);
-  transform: translateY(-2px);
+  border: 1.5px solid var(--border);
 }
 
-/* Location badge */
-.author-card__location {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-xs);
-  color: var(--text-muted);
-  margin-top: var(--space-5);
+.author-card__cta--secondary:hover {
+  border-color: var(--text-muted);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
 }

@@ -1,9 +1,9 @@
 /* ── Skills Section ── */
 .skills {
   width: 100%;
-  padding: var(--space-12) var(--space-10) var(--space-16);
-  border-top: 1px solid var(--border);
-  animation: fadeUp 0.6s 0.35s ease both;
+  padding: var(--space-10) var(--space-10) var(--space-16);
+  border-top: 1.5px solid var(--border);
+  animation: fadeUp 0.5s 0.3s ease both;
 }
 
 .skills__header {
@@ -19,12 +19,14 @@
   letter-spacing: 0.12em;
   color: var(--text-muted);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .skills__line {
   flex: 1;
-  height: 1px;
+  height: 1.5px;
   background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+  border-radius: 2px;
 }
 
 .skills__grid {
@@ -38,31 +40,19 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
-  background: var(--bg-glass);
-  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
   transition: all var(--transition);
   cursor: default;
-  position: relative;
-  overflow: hidden;
-}
-
-.skills__item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--grad-surface);
-  opacity: 0;
-  transition: opacity var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .skills__item:hover {
-  border-color: var(--border-hover);
+  border-color: var(--border-orange);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-md);
 }
-
-.skills__item:hover::before { opacity: 1; }
 
 .skills__icon {
   font-size: var(--text-lg);
@@ -72,17 +62,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(99,102,241,0.1);
+  background: var(--orange-bg);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(99,102,241,.2);
-  position: relative;
-  z-index: 1;
+  border: 1px solid var(--border-orange);
   transition: all var(--transition);
-}
-
-.skills__item:hover .skills__icon {
-  background: rgba(99,102,241,.2);
-  border-color: rgba(99,102,241,.4);
 }
 
 .skills__label {
@@ -90,8 +73,6 @@
   font-weight: 500;
   color: var(--text-secondary);
   transition: color var(--transition);
-  position: relative;
-  z-index: 1;
 }
 
 .skills__item:hover .skills__label { color: var(--text-primary); }

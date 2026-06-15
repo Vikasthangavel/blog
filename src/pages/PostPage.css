@@ -1,6 +1,6 @@
 .post-page {
   width: 100%;
-  padding: var(--space-12) var(--space-10) var(--space-16);
+  padding: var(--space-10) var(--space-10) var(--space-16);
   min-height: 100vh;
   animation: fadeUp 0.5s ease both;
 }
@@ -11,39 +11,20 @@
   text-align: center;
 }
 
-.post-page__back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--indigo);
-  font-weight: 600;
-  margin-bottom: var(--space-8);
-  padding: 8px 16px;
-  border: 1px solid rgba(99,102,241,.25);
-  border-radius: var(--radius-full);
-  background: rgba(99,102,241,.08);
-  transition: all var(--transition);
-}
-
-.post-page__back:hover {
-  background: rgba(99,102,241,.15);
-  border-color: rgba(99,102,241,.45);
-  transform: translateX(-2px);
-}
-
+/* ── Header ── */
 .post-page__header {
   margin-bottom: var(--space-10);
   padding-bottom: var(--space-8);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
 }
 
 .post-page__title {
-  font-size: var(--text-4xl);
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-3xl), 4vw, 3rem);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.2;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-5);
 }
 
@@ -56,16 +37,16 @@
 }
 
 .post-page__tag {
-  background: rgba(99,102,241,.12);
-  color: var(--indigo);
+  background: var(--orange-bg);
+  color: var(--orange);
   padding: 4px 12px;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: var(--text-xs);
-  border: 1px solid rgba(99,102,241,.25);
+  border: 1px solid var(--border-orange);
 }
 
-/* Article Body */
+/* ── Article Body ── */
 .post-page__content {
   font-size: var(--text-lg);
   line-height: 1.85;
@@ -79,8 +60,9 @@
 }
 
 .post-page__content h2 {
+  font-family: var(--font-serif);
   font-size: var(--text-2xl);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-primary);
   margin-top: var(--space-12);
   margin-bottom: var(--space-4);
@@ -94,15 +76,15 @@
   content: '';
   display: inline-block;
   width: 4px;
-  height: 1.2em;
-  background: var(--grad-primary);
+  height: 1.1em;
+  background: var(--grad-orange);
   border-radius: 2px;
   flex-shrink: 0;
 }
 
 .post-page__content h3 {
   font-size: var(--text-xl);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
   margin-top: var(--space-8);
   margin-bottom: var(--space-3);
@@ -117,38 +99,58 @@
 
 .post-page__content li {
   margin-bottom: var(--space-3);
-  position: relative;
 }
 
-.post-page__content li::marker { color: var(--indigo); }
+.post-page__content li::marker { color: var(--orange); }
 
 .post-page__content a {
-  color: var(--indigo);
+  color: var(--orange);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(99,102,241,.4);
+  text-decoration-color: rgba(193,98,31,.35);
   transition: color var(--transition), text-decoration-color var(--transition);
 }
 
 .post-page__content a:hover {
-  color: var(--violet);
-  text-decoration-color: var(--violet);
+  color: var(--orange-light);
+  text-decoration-color: var(--orange-light);
 }
 
 .post-page__content strong { color: var(--text-primary); }
 
 .post-page__content hr {
   border: 0;
-  border-top: 1px solid var(--border);
+  border-top: 1.5px solid var(--border);
   margin: var(--space-12) 0;
 }
 
 .post-page__summary {
-  background: var(--grad-surface);
+  background: var(--orange-bg);
   padding: var(--space-6) var(--space-8);
   border-radius: var(--radius-lg);
-  border-left: 4px solid var(--indigo);
+  border-left: 4px solid var(--orange);
   font-size: var(--text-base);
-  border: 1px solid rgba(99,102,241,.2);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+  border: 1.5px solid var(--border-orange);
+  color: var(--text-secondary);
+}
+
+/* ── Back link (not-found fallback) ── */
+.post-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--orange);
+  font-weight: 600;
+  margin-top: var(--space-4);
+  padding: 8px 18px;
+  border: 1px solid var(--border-orange);
+  border-radius: var(--radius-full);
+  background: var(--orange-bg);
+  transition: all var(--transition);
+}
+
+.post-page__back:hover {
+  background: #FDECD8;
+  border-color: var(--orange);
 }
