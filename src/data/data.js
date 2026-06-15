@@ -49,6 +49,7 @@ export const posts = [
     date: "May 12",
     category: "DevOps",
     tag: "Deployment",
+    slug: "dakshaa-t26",
     liveUrl: "https://dakshaa.ksrct.ac.in",
   },
   {
