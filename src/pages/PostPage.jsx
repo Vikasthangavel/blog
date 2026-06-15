@@ -6,7 +6,7 @@ const Time2OrderPost = () => (
   <article className="post-page">
     <div className="post-page__header">
       <Link to="/" className="post-page__back">← Back to home</Link>
-      <h1 className="post-page__title">Time2Order: Making Local Shop Pickups Smarter and Faster</h1>
+      <h1 className="post-page__title">How I Built a Preorder System for Local Shops Using Python &amp; Cashfree API</h1>
       <div className="post-page__meta">
         <span className="post-page__tag">Project Story</span>
         <span>•</span>
@@ -17,83 +17,114 @@ const Time2OrderPost = () => (
     </div>
 
     <div className="post-page__content">
-      <p>In today's busy world, customers often spend valuable time waiting in queues at bakeries, restaurants, and local stores. Time2Order is designed to solve this problem by providing a simple platform where customers can place orders in advance and collect them at their preferred time.</p>
 
-      <h2>What is Time2Order?</h2>
-      <p>Time2Order is a pre-order and pickup management platform that connects customers with local shops. Instead of waiting in long lines, customers can browse products, place orders, choose a pickup time, and collect their items quickly.</p>
+      <p>
+        Every project has an origin story. For Time2Order, mine started long before I wrote a single
+        line of code — during my 12th grade school holidays, in a place I least expected: my uncle's office.
+      </p>
 
-      <h2>Problems Faced by Customers</h2>
+      <h2>Where the Idea Was Born</h2>
+      <p>
+        During the gap between finishing school and starting college, I spent time at my uncle's office —
+        a products and spares business. What I noticed immediately was the uneven rhythm of the day. For
+        long stretches, the office would be quiet with staff waiting around. Then, without warning, multiple
+        customers would arrive at once, overwhelming the team, spiking wait times, and creating visible
+        stress for everyone involved.
+      </p>
+      <p>
+        We used a nearby hotel for meals during work. That had the same issue — sometimes we'd arrive late
+        from the office and the food we wanted was already sold out. The kitchen couldn't predict demand;
+        we couldn't plan our visit. It was friction on both sides.
+      </p>
+      <p>
+        Back home, I saw the same pattern repeat at grocery stores, meat shops, and local hotels. Customers
+        waited. Shops either ran out of stock or scrambled to keep up. Nobody had a reliable way to manage this.
+      </p>
+      <p>
+        The thing that struck me: <strong>this problem existed everywhere, but no one had solved it for
+        Tier-3 towns and pickup-only shops</strong> — the kind that don't deliver, where you have to show
+        up in person. Big food apps work for restaurants with delivery. But for the local meat shop, the
+        neighbourhood bakery, the spare parts counter — there was nothing.
+      </p>
+      <p>
+        I had the idea in 12th grade. But I didn't have the knowledge to build it yet.
+      </p>
+
+      <h2>The First Build: A Java MVP in 3rd Semester</h2>
+      <p>
+        In our 3rd semester, we had to create a Java application as a course project. I used that
+        opportunity to build the simplest possible version of the concept — a basic preorder flow in
+        a Java desktop application. It was rough, limited, and nowhere near production-ready, but it
+        proved the core logic worked and gave the idea a tangible form for the first time.
+      </p>
+
+      <h2>Going Full Stack: The Flask Web App</h2>
+      <p>
+        After the Java prototype, I shared the concept in detail with my project collaborator{" "}
+        <a href="https://mithunp.me" target="_blank" rel="noreferrer">Mithun P</a>, who immediately
+        understood the problem and the opportunity. Together, we rebuilt the system properly as a
+        Flask web application, launched in <strong>April 2026</strong>.
+      </p>
+      <p>
+        We validated it with actual local shops. The feedback was clear and direct: shop owners and
+        customers understood the concept and found value in it — but they{" "}
+        <strong>preferred a mobile app over a web app</strong>. People in this segment primarily use
+        smartphones, not browsers. The web app had validated the idea; the mobile app was the real product.
+      </p>
+
+      <h2>Building the Mobile App</h2>
+      <p>
+        We shifted focus and built the mobile app using <strong>React Native with Expo</strong>. The
+        backend stayed on a <strong>VPS</strong>, the web presence was served through{" "}
+        <strong>Cloudflare</strong> with a custom domain, and the shop owner dashboard was built in{" "}
+        <strong>React</strong>.
+      </p>
+      <p>
+        The app was submitted for review on <strong>13th June 2026</strong> and is currently under
+        review on the app store.
+      </p>
+
+      <h2>What We Built</h2>
       <ul>
-        <li>Long waiting times at shops.</li>
-        <li>Uncertainty about product availability.</li>
-        <li>Crowded stores during peak hours.</li>
-        <li>Difficulty in planning purchases efficiently.</li>
+        <li><strong>Preorder flow</strong> — customers place orders in advance and choose a pickup time slot.</li>
+        <li><strong>Shop dashboard</strong> — owners see incoming orders, manage slots, and control stock visibility.</li>
+        <li><strong>Payment integration</strong> — online payment via Cashfree API with server-side verification.</li>
+        <li><strong>User onboarding</strong> — designed for first-time users with minimal friction.</li>
+        <li><strong>Marketing page</strong> — to explain the product to shops during onboarding visits.</li>
       </ul>
 
-      <h2>Problems Faced by Shop Owners</h2>
+      <h2>Tech Stack</h2>
       <ul>
-        <li>Manual order management.</li>
-        <li>Rush during busy hours.</li>
-        <li>Difficulty predicting demand.</li>
-        <li>Limited digital presence.</li>
+        <li><strong>Mobile App:</strong> React Native + Expo</li>
+        <li><strong>Web Frontend:</strong> React (shop owner dashboard)</li>
+        <li><strong>Backend:</strong> Python / Flask, hosted on VPS</li>
+        <li><strong>Infrastructure:</strong> Cloudflare (CDN, DNS, security), custom domain</li>
+        <li><strong>Payments:</strong> Cashfree API</li>
       </ul>
 
-      <h2>Our Solution</h2>
-      <p>Time2Order provides:</p>
-
-      <h3>Easy Online Ordering</h3>
-      <p>Customers can place orders anytime through the platform.</p>
-
-      <h3>Scheduled Pickup</h3>
-      <p>Users choose a convenient pickup time, reducing waiting time.</p>
-
-      <h3>Real-Time Order Management</h3>
-      <p>Shop owners receive and manage orders efficiently.</p>
-
-      <h3>Secure Payment Options</h3>
-      <p>Customers can pay online or use cash on pickup.</p>
-
-      <h3>Order Notifications</h3>
-      <p>Customers receive updates regarding their order status.</p>
-
-      <h2>Benefits for Customers</h2>
+      <h2>What This Project Taught Me</h2>
       <ul>
-        <li>Save time.</li>
-        <li>Avoid queues.</li>
-        <li>Convenient ordering experience.</li>
-        <li>Better planning for busy schedules.</li>
+        <li>Real problems don't always come from tech communities — sometimes they're sitting in a spare parts office in your hometown.</li>
+        <li><strong>Validation before scaling:</strong> the web app wasn't the final product, it was a proof of concept. Building it first saved us from over-engineering a mobile app no one needed.</li>
+        <li>User feedback is the fastest debugging tool. "We prefer an app" redirected months of work in a single conversation.</li>
+        <li>Going from a Java prototype → Flask web app → React Native app taught me how the same idea evolves as your skills and understanding grow.</li>
+        <li>Tier-3 markets have real unsolved problems. You don't need to invent a new concept — you need to bring existing solutions to underserved places.</li>
       </ul>
 
-      <h2>Benefits for Shop Owners</h2>
-      <ul>
-        <li>Improved workflow.</li>
-        <li>Better customer satisfaction.</li>
-        <li>Increased repeat customers.</li>
-        <li>Opportunity to expand digitally without large investments.</li>
-      </ul>
-
-      <h2>Future Enhancements</h2>
-      <p>Time2Order aims to introduce:</p>
-      <ul>
-        <li>AI-based demand prediction.</li>
-        <li>Automated order processing.</li>
-        <li>Loyalty and reward programs.</li>
-        <li>Delivery partner integration.</li>
-        <li>Analytics dashboard for shop owners.</li>
-        <li>WhatsApp order notifications.</li>
-        <li>Multi-store support.</li>
-      </ul>
-
-      <h2>Vision</h2>
-      <p>Our vision is to help local businesses embrace digital transformation while providing customers with a seamless and efficient ordering experience.</p>
-
-      <h2>Conclusion</h2>
-      <p>Time2Order is not just an ordering platform; it is a step towards creating a smarter and more organized shopping experience. By reducing waiting time and improving communication between customers and shop owners, Time2Order aims to empower local businesses and enhance customer convenience.</p>
+      <h2>Current Status</h2>
+      <p>
+        The mobile app is <strong>under review as of 13th June 2026</strong>. The web app is live at{" "}
+        <a href="https://time2orders.com" target="_blank" rel="noreferrer">time2orders.com</a>. Onboarding
+        of the first set of shops is in progress.
+      </p>
 
       <hr />
 
       <p className="post-page__summary">
-        <strong>Summary:</strong> Time2Order is a smart pre-order and pickup platform that helps customers save time and enables local businesses to manage orders efficiently. By allowing customers to order in advance and pick up at their preferred time, Time2Order creates a faster, more convenient, and queue-free shopping experience.
+        <strong>Summary:</strong> Time2Order started as an observation during my 12th grade holidays —
+        local shops in Tier-3 towns had no way to manage customer flow for pickups. What began as a rough
+        Java MVP became a validated Flask web app, and is now a React Native mobile app under app store
+        review. This project taught me that the best problems to solve are the ones hiding in plain sight.
       </p>
     </div>
   </article>
@@ -182,7 +213,7 @@ const DakshaaPost = () => (
         never trust client-side values.
       </p>
 
-      <h2>Role-Based Access: Volunteer & Coordinator Portals</h2>
+      <h2>Role-Based Access: Volunteer &amp; Coordinator Portals</h2>
       <p>
         We built <strong>separate login systems</strong> for volunteers and coordinators. This wasn't
         just a UX decision — it forced me to think clearly about authentication vs. authorization:
