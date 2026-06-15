@@ -120,7 +120,7 @@ const DakshaaPost = () => (
 
       <p>
         DAKSHAA T26 is our college's national-level technical symposium — 30+ events, 10+ departments,
-        hundreds of participants. I was the backend developer responsible for the registration system,
+        thousands of participants. I was the backend developer responsible for the registration system,
         payment verification, and volunteer/coordinator portals. Here's what I built, what broke, and
         what I learned.
       </p>
@@ -241,7 +241,7 @@ const DakshaaPost = () => (
         DAKSHAA T26 ran successfully as a fully digital event. Registrations were tracked in real time,
         payments were verified automatically, attendance was managed via QR codes, and every department
         could monitor their own numbers live. What started as a college project became a real production
-        system serving hundreds of participants — and it held up.
+        system serving thousands of participants — and it held up.
       </p>
 
       <hr />
