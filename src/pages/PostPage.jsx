@@ -285,12 +285,201 @@ const DakshaaPost = () => (
   </article>
 );
 
+/* ─── Time2Farm Content ─────────────────────────────────────────────────── */
+const Time2FarmPost = () => (
+  <article className="post-page">
+    <div className="post-page__header">
+      <h1 className="post-page__title">
+        Using Gemini API to Add AI Insights to a Farm Finance App
+      </h1>
+      <div className="post-page__meta">
+        <span className="post-page__tag">Gemini API</span>
+        <span>•</span>
+        <span>Apr 24</span>
+        <span>•</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+
+    <div className="post-page__content">
+
+      <p>
+        I come from a farming family. Growing up, I watched my family manage multiple paddy fields,
+        vegetable plots, and a small cattle section — each one generating its own income, each one
+        carrying its own costs. But when it came to knowing <strong>which field was actually profitable
+        </strong>, nobody could give a clear answer. Everything was tracked in memory, in notebooks,
+        or not at all.
+      </p>
+      <p>
+        That was the gap I wanted to close. As a second-year B.Tech AI &amp; Data Science student,
+        I built <strong>Time2Farm</strong> — a web application designed specifically for farming
+        families who manage multiple income sources and expenses across different sections of their land.
+      </p>
+
+      <h2>The Problem: No Visibility Into Field-Level Cash Flow</h2>
+      <p>
+        A typical farming family doesn't just earn from one crop. They might have:
+      </p>
+      <ul>
+        <li>Paddy income from Field A and Field B</li>
+        <li>Vegetable income from a separate plot</li>
+        <li>Labour costs, fertiliser expenses, and water charges split unevenly across fields</li>
+        <li>Loan repayments tied to specific seasons</li>
+      </ul>
+      <p>
+        The question they could never answer confidently: <strong>"Which field gave us the most profit
+        this season?"</strong> Without structured records, they couldn't know. They felt it — but
+        they couldn't see it.
+      </p>
+      <p>
+        I built Time2Farm to make that answer visible.
+      </p>
+
+      <h2>The MVP: React + Flask</h2>
+      <p>
+        I chose a stack I was already building confidence with: <strong>React</strong> on the frontend
+        and <strong>Flask</strong> on the backend. The goal was a clean, mobile-friendly interface —
+        because most farmers in my family use smartphones, not laptops.
+      </p>
+      <p>
+        The core of the app lets users:
+      </p>
+      <ul>
+        <li><strong>Add income entries</strong> — tagged to a specific field or section (e.g. "North Paddy Field", "Vegetable Plot").</li>
+        <li><strong>Add expense entries</strong> — tagged the same way, with categories like Labour, Fertiliser, Irrigation, Equipment.</li>
+        <li><strong>View a section-wise summary</strong> — income vs. expense vs. net profit per field, per month or season.</li>
+        <li><strong>Filter and compare</strong> — see which section is performing best and which is consistently running at a loss.</li>
+      </ul>
+      <p>
+        The Flask backend handled data storage and served the API. Keeping the backend lightweight
+        was intentional — I didn't want infrastructure complexity getting in the way of the actual
+        problem I was solving.
+      </p>
+
+      <h2>Adding AI: LangChain + Gemini API Chatbot</h2>
+      <p>
+        This is where my AI coursework became directly useful.
+      </p>
+      <p>
+        As an AI student, I wanted to go beyond static dashboards. Charts and tables tell you <em>what
+        </em> happened — but they don't tell you <em>why</em> or <em>what to do next</em>. I wanted
+        farmers to be able to <strong>ask questions about their own farm data in plain language</strong>.
+      </p>
+      <p>
+        I integrated a chatbot using <strong>LangChain</strong> with <strong>Google's Gemini API</strong>
+        as the underlying language model. Here's what it can do:
+      </p>
+      <ul>
+        <li>
+          <strong>Summarise the entire farm:</strong> "Give me a summary of my farm's performance
+          this quarter" — and the AI pulls together all the income and expense entries across every
+          field and generates a readable cash flow summary.
+        </li>
+        <li>
+          <strong>Identify high-income and high-expense sections:</strong> "Which field gave the most
+          income last month?" or "Where am I spending the most on labour?" — answered in conversational
+          language, not just numbers.
+        </li>
+        <li>
+          <strong>Generate detailed transaction reports:</strong> The chatbot can produce a structured
+          report of all transactions for a given time period — formatted clearly so the farmer can
+          understand it, share it, or use it for loan documentation.
+        </li>
+        <li>
+          <strong>Offer basic insights:</strong> If a field has been consistently unprofitable,
+          the AI can flag it and suggest possible causes based on the expense patterns it can see
+          in the data.
+        </li>
+      </ul>
+
+      <h2>How the LangChain Integration Works</h2>
+      <p>
+        The chatbot sits in a panel on the app's dashboard. When a user asks a question, the
+        Flask backend:
+      </p>
+      <ol>
+        <li>Fetches the relevant farm transaction data from the database.</li>
+        <li>Formats it into a structured context string (income entries, expense entries, section names, dates).</li>
+        <li>Passes the context + user question to a LangChain chain that sends it to the Gemini API.</li>
+        <li>Returns the AI's response to the frontend in real time.</li>
+      </ol>
+      <p>
+        The key design decision here was to <strong>inject the actual farm data as context</strong>
+        into every prompt — rather than asking the AI to "remember" anything. This kept the system
+        stateless and reliable. Every chat response is grounded in that user's real data.
+      </p>
+      <p>
+        I kept the chain simple intentionally. LangChain gave me a clean interface to manage prompt
+        templates and chain the context + question together. Gemini's API handled the reasoning
+        and generation.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Frontend:</strong> React (mobile-first, responsive UI)</li>
+        <li><strong>Backend:</strong> Python / Flask (REST API, data management)</li>
+        <li><strong>AI Layer:</strong> LangChain + Google Gemini API</li>
+        <li><strong>Database:</strong> SQLite / SQLAlchemy (lightweight, self-contained for MVP)</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <ul>
+        <li>
+          <strong>Context injection is everything in LLM applications.</strong> The AI's output is
+          only as good as the context you provide. Structuring the farm data clearly before passing
+          it to Gemini was the most important engineering decision in this project.
+        </li>
+        <li>
+          <strong>Simple problems are worth solving seriously.</strong> "Which field makes the most
+          money?" sounds trivial — but for a farming family with no digital tools, it's genuinely
+          unanswered. You don't need a flashy problem to build something meaningful.
+        </li>
+        <li>
+          <strong>Flask is the right choice for AI-heavy backends.</strong> Its lightweight nature
+          means I could iterate quickly on the LangChain integration without fighting framework
+          conventions. The backend's only job was to serve data and orchestrate the AI call.
+        </li>
+        <li>
+          <strong>Farmers don't want dashboards — they want answers.</strong> Charts and graphs look
+          good in demos. But the feature my family found most useful was typing a question and
+          getting a clear answer. Conversational AI is a better UX fit for this audience than
+          any data visualisation.
+        </li>
+        <li>
+          Building for your own family as the first users is both motivating and humbling. They'll
+          tell you immediately what doesn't make sense — without softening the feedback.
+        </li>
+      </ul>
+
+      <h2>Current Status</h2>
+      <p>
+        Time2Farm is at MVP stage. The core transaction tracking and AI chatbot are functional.
+        I'm testing it with my own family's data to validate the section-wise reporting before
+        expanding further. The next planned features are seasonal comparison reports and expense
+        forecasting based on previous cycles.
+      </p>
+
+      <hr />
+
+      <p className="post-page__summary">
+        <strong>Summary:</strong> Time2Farm is a farming finance web app built with React and Flask
+        that lets farmers track income and expenses field-by-field. I added a LangChain + Gemini API
+        chatbot that can summarise the entire farm's cash flow, identify which fields are most
+        profitable, and generate readable transaction reports — all in plain conversational language.
+        It started as a personal problem from my family's farm and became my most practically
+        motivated project as an AI student.
+      </p>
+    </div>
+  </article>
+);
+
 /* ─── Router ─────────────────────────────────────────────────────────────── */
 const PostPage = () => {
   const { slug } = useParams();
 
   if (slug === "time2order") return <Time2OrderPost />;
   if (slug === "dakshaa-t26") return <DakshaaPost />;
+  if (slug === "time2farm") return <Time2FarmPost />;
 
   return (
     <div className="post-page__not-found">

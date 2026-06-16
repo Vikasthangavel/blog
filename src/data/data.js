@@ -61,6 +61,7 @@ export const posts = [
     date: "Apr 24",
     category: "AI / ML",
     tag: "Gemini API",
+    slug: "time2farm",
   },
   {
     id: "post-4",
