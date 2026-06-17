@@ -473,6 +473,100 @@ const Time2FarmPost = () => (
   </article>
 );
 
+/* ─── Gradix Internship Content ───────────────────────────────────────────── */
+const GradixInternshipPost = () => (
+  <article className="post-page">
+    <div className="post-page__header">
+      <h1 className="post-page__title">
+        What I Learned as a Web Developer Intern at Gradix Technologies
+      </h1>
+      <div className="post-page__meta">
+        <span className="post-page__tag">Internship</span>
+        <span>•</span>
+        <span>Apr 5</span>
+        <span>•</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+
+    <div className="post-page__content">
+      <p>
+        Stepping into my first professional role as a Web Developer Intern at Gradix Technologies was a 
+        pivotal moment in my career. Before this, I had built personal projects, hacked together prototypes 
+        for college symposiums, and solved defined problems. But working in a team-based, agile environment 
+        is a completely different ballgame. 
+      </p>
+      <p>
+        Here's a breakdown of the real-world lessons I took away from my time at Gradix — from writing 
+        production-ready React to surviving my first API integration with a backend team.
+      </p>
+
+      <h2>1. Responsive Design is More Than Media Queries</h2>
+      <p>
+        My first major task was building responsive frontends for a new web portal. I thought I knew how 
+        to handle responsiveness — just throw in some <code>@media (max-width: 768px)</code> rules and call it a day, right?
+      </p>
+      <p>
+        I quickly learned that true responsive design is about fluid layouts, flexible typography, and 
+        rethinking user experience across devices. I got comfortable using CSS Grid and Flexbox properly, 
+        and started adopting a mobile-first mindset. If the UI doesn't work well on a phone, it's broken — 
+        even if it looks beautiful on a 27-inch monitor.
+      </p>
+
+      <h2>2. API Integrations: The Art of Handling Errors</h2>
+      <p>
+        In personal projects, APIs usually return exactly what you expect. In the real world, APIs fail, 
+        timeout, or return unexpected data structures. 
+      </p>
+      <p>
+        Collaborating with the backend team taught me defensive programming on the frontend:
+      </p>
+      <ul>
+        <li>Always assume the data might be missing or malformed (Optional Chaining <code>?.</code> is a lifesaver).</li>
+        <li>Never leave the user hanging — implement proper loading states and skeleton screens.</li>
+        <li>Show meaningful error messages, not just "Something went wrong."</li>
+      </ul>
+
+      <h2>3. App Performance Matters (A Lot)</h2>
+      <p>
+        When working on an internal dashboard, I noticed the app was sluggish. I dove into React Developer Tools 
+        and realised we had unnecessary re-renders happening everywhere.
+      </p>
+      <p>
+        By strategically using <code>useMemo</code>, <code>useCallback</code>, and breaking down large components, 
+        we significantly improved the app's performance. It taught me that writing code that <i>works</i> is only 
+        the first step. Writing code that is <i>efficient</i> is what makes you a professional.
+      </p>
+
+      <h2>4. Surviving Agile and Team Collaboration</h2>
+      <p>
+        Perhaps the biggest shift was the workflow. Daily stand-ups, sprint planning, and code reviews were new 
+        concepts to me. Initially, submitting a Pull Request (PR) was nerve-wracking. 
+      </p>
+      <p>
+        But I learned that code reviews are not personal attacks; they are the best way to learn from senior 
+        developers. Learning how to write clear PR descriptions, manage Git branches without causing merge conflicts, 
+        and communicate blockers early were skills just as important as writing JavaScript.
+      </p>
+
+      <h2>Looking Back</h2>
+      <p>
+        My internship at Gradix Technologies bridged the gap between academic learning and industry standards. 
+        It showed me what it takes to build software that real users rely on, and gave me a solid foundation 
+        in full-stack collaboration.
+      </p>
+
+      <hr />
+
+      <p className="post-page__summary">
+        <strong>Summary:</strong> My internship at Gradix Technologies was a crash course in real-world web development. 
+        I learned the nuances of building truly responsive frontends, the importance of robust API error handling, 
+        techniques for optimising React performance, and the value of communication in an agile team.
+      </p>
+    </div>
+  </article>
+);
+
 /* ─── Router ─────────────────────────────────────────────────────────────── */
 const PostPage = () => {
   const { slug } = useParams();
@@ -480,6 +574,7 @@ const PostPage = () => {
   if (slug === "time2order") return <Time2OrderPost />;
   if (slug === "dakshaa-t26") return <DakshaaPost />;
   if (slug === "time2farm") return <Time2FarmPost />;
+  if (slug === "gradix-internship") return <GradixInternshipPost />;
 
   return (
     <div className="post-page__not-found">

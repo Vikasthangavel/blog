@@ -72,6 +72,7 @@ export const posts = [
     date: "Apr 5",
     category: "Career",
     tag: "Internship",
+    slug: "gradix-internship",
   },
 ];
 
